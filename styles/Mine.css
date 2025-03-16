@@ -1,0 +1,18 @@
+.mine-image {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.mine-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mines-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+} 
