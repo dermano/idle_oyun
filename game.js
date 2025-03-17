@@ -1229,4 +1229,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Ziyaretçi sayısını takip etmek için basit bir sayaç
+const visitorStats = {
+    // LocalStorage'dan verileri al veya varsayılan değerleri kullan
+    totalVisits: parseInt(localStorage.getItem('totalVisits')) || 0,
+    
+    // Ziyaretçi sayısını güncelle
+    updateStats() {
+        // Toplam ziyaret sayısını artır (sadece yeni oturumlarda)
+        if (!sessionStorage.getItem('visited')) {
+            this.totalVisits++;
+            localStorage.setItem('totalVisits', this.totalVisits);
+            sessionStorage.setItem('visited', 'true');
+        }
+
+        // Rastgele online kullanıcı sayısı (1-10 arası)
+        const onlineUsers = Math.floor(Math.random() * 10) + 1;
+
+        // DOM'u güncelle
+        document.getElementById('onlineUsers').textContent = onlineUsers;
+        document.getElementById('totalVisits').textContent = this.totalVisits;
+    }
+};
+
+// Sayfa yüklendiğinde istatistikleri başlat
+document.addEventListener('DOMContentLoaded', () => {
+    visitorStats.updateStats();
+});
+
 
