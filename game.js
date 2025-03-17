@@ -675,8 +675,8 @@ function clickGold() {
         }
         
         // XP ekle ve ekranı güncelle
-        addXP(1);
-        updateDisplay();
+    addXP(1);
+    updateDisplay();
         animateResourceGain('gold');
         
         // Oyun verilerini kaydet
@@ -709,15 +709,15 @@ function animateResourceGain(type) {
 
         // Animasyonları uygula
         button.style.transform = 'scale(0.95)';
-        numberElement.style.transform = 'scale(1.2)';
-        numberElement.style.color = '#27ae60';
+    numberElement.style.transform = 'scale(1.2)';
+    numberElement.style.color = '#27ae60';
 
         // Animasyonları geri al
-        setTimeout(() => {
+    setTimeout(() => {
             button.style.transform = 'scale(1)';
-            numberElement.style.transform = 'scale(1)';
-            numberElement.style.color = '#2c3e50';
-        }, 200);
+        numberElement.style.transform = 'scale(1)';
+        numberElement.style.color = '#2c3e50';
+    }, 200);
 
         // Ses efektini güvenli bir şekilde çal
         if (audioManager && typeof audioManager.playBeep === 'function') {
